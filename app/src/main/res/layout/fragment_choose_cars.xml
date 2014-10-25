@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.misanthropic.mash.Choose_cars">
+
+    <ImageView
+        android:layout_width="229dp"
+        android:layout_height="229dp"
+        android:id="@+id/imageView"
+        android:layout_gravity="center_horizontal|top"
+        android:src="@drawable/mash_dice"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/person_love"
+        android:layout_gravity="center"
+        android:hint="Pick your dream car"
+        android:gravity="center"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/person_like"
+        android:layout_alignStart="@+id/person_like"
+        android:paddingTop="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_gravity="center"
+        android:textSize="25sp"
+        android:textStyle="bold|italic"
+        android:textColor="#ff000000"
+        android:text="@string/car_header"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/person_like"
+        android:layout_below="@+id/person_love"
+        android:layout_centerHorizontal="true"
+        android:hint="Pick another dream car"
+        android:gravity="center"
+        android:paddingTop="15dp" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/person_cute"
+        android:layout_below="@+id/person_like"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:paddingTop="15dp"
+        android:hint="Pick something economical" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/person_gross"
+        android:layout_below="@+id/person_cute"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:hint="Pick something awful"
+        android:paddingTop="15dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:text="What will you drive?"
+        android:id="@+id/button"
+        android:layout_below="@+id/person_gross"
+        android:layout_centerHorizontal="true"
+        android:background="#ffffc8e6"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+</RelativeLayout>

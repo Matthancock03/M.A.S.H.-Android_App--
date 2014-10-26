@@ -14,7 +14,7 @@
         android:id="@+id/kid_button"
         android:background="#ffffc8e6"
         android:layout_gravity="center"
-        android:layout_below="@+id/editText2"
+        android:layout_below="@+id/num_kids4"
         android:layout_alignLeft="@+id/imageView"
         android:layout_alignStart="@+id/imageView"
         android:layout_marginTop="10dp" />
@@ -60,7 +60,7 @@
     <EditText
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:id="@+id/editText2"
+        android:id="@+id/num_kids4"
         android:layout_below="@+id/num_kids3"
         android:layout_centerHorizontal="true"
         android:gravity="center"

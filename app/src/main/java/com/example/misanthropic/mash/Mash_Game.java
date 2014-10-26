@@ -1,24 +1,34 @@
 package com.example.misanthropic.mash;
 
 import android.app.Activity;
-import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
 import android.widget.EditText;
 
 import static java.lang.Thread.sleep;
 
 
-public class Mash_Game extends Activity {
-    public String userName = null;
+public class Mash_Game extends Activity implements Pick_Husbands.OnFragmentInteractionListener ,Choose_A_Number.OnFragmentInteractionListener,
+        Choose_cars.OnFragmentInteractionListener, Number_Kids.OnFragmentInteractionListener, Results.OnFragmentInteractionListener{
+    private String userName = null;
+    private String husband1;
+    private String husband2;
+    private String husband3;
+    private String husband4;
+    private String car1;
+    private String car2;
+    private String car3;
+    private String car4;
+    private int kids1;
+    private int kids2;
+    private int kids3;
+    private int kids4;
+    private int numpick;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,40 +47,76 @@ public class Mash_Game extends Activity {
         nameEdit.setFocusable(false);
 
         sleep(1500);*/
-        replaceFragment();
+        Pick_Husbands spouse = new Pick_Husbands();
+        replaceFragment(spouse);
 
     }
 
-    private void replaceFragment(){
-        Fragment spouse = new Pick_Husbands();
+    public void submitHusbands(View view){
+        EditText nameEdit1 = (EditText)findViewById(R.id.car1);
+        EditText nameEdit2 = (EditText)findViewById(R.id.person_like);
+        EditText nameEdit3 = (EditText)findViewById(R.id.person_cute);
+        EditText nameEdit4 = (EditText)findViewById(R.id.person_gross);
+
+        husband1 = nameEdit1.getText().toString();
+        husband2 = nameEdit2.getText().toString();
+        husband3 = nameEdit3.getText().toString();
+        husband4 = nameEdit4.getText().toString();
+
+        Choose_cars cars = new Choose_cars();
+        replaceFragment(cars);
+    }
+
+    public void submitCars(View view){
+        EditText nameEdit1 = (EditText)findViewById(R.id.car1);
+        EditText nameEdit2 = (EditText)findViewById(R.id.car2);
+        EditText nameEdit3 = (EditText)findViewById(R.id.car3);
+        EditText nameEdit4 = (EditText)findViewById(R.id.car4);
+
+        car1 = nameEdit1.getText().toString();
+        car2 = nameEdit2.getText().toString();
+        car3 = nameEdit3.getText().toString();
+        car4 = nameEdit4.getText().toString();
+
+        Number_Kids kids = new Number_Kids();
+        replaceFragment(kids);
+    }
+
+    public void numKids(View view){
+        EditText nameEdit1 = (EditText)findViewById(R.id.num_kids1);
+        EditText nameEdit2 = (EditText)findViewById(R.id.num_kids2);
+        EditText nameEdit3 = (EditText)findViewById(R.id.num_kids3);
+        EditText nameEdit4 = (EditText)findViewById(R.id.num_kids4);
+
+        kids1 = Integer.parseInt(nameEdit1.getText().toString());
+        kids2 = Integer.parseInt(nameEdit1.getText().toString());
+        kids3 = Integer.parseInt(nameEdit1.getText().toString());
+        kids4 = Integer.parseInt(nameEdit1.getText().toString());
+
+        Choose_A_Number choose = new Choose_A_Number();
+        replaceFragment(choose);
+    }
+    public void pickNum(View view){
+        EditText nameEdit1 = (EditText)findViewById(R.id.num_roll);
+        numpick = Integer.parseInt(nameEdit1.getText().toString());
+
+        Results result = new Results();
+        replaceFragment(result);
+    }
+
+    private void replaceFragment(Fragment frag){
+
         FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction().replace(R.layout.activity_mash__game, spouse).addToBackStack(null).commit();
+        fragmentManager.beginTransaction().replace(R.id.container, frag).addToBackStack(null).commit();
 
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.mash__game, menu);
-        return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+    public void onFragmentInteraction(Uri uri) {
+
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
+
     public static class PlaceholderFragment extends Fragment {
 
         public PlaceholderFragment() {

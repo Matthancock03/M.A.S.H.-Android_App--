@@ -9,14 +9,14 @@
         android:layout_height="229dp"
         android:id="@+id/imageView"
         android:layout_gravity="center_horizontal|top"
-        android:src="@drawable/mash_dice"
+        android:src="@drawable/mash_car"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:id="@+id/person_love"
+        android:id="@+id/car1"
         android:layout_gravity="center"
         android:hint="Pick your dream car"
         android:gravity="center"
@@ -40,8 +40,8 @@
     <EditText
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:id="@+id/person_like"
-        android:layout_below="@+id/person_love"
+        android:id="@+id/car2"
+        android:layout_below="@+id/car1"
         android:layout_centerHorizontal="true"
         android:hint="Pick another dream car"
         android:gravity="center"
@@ -50,8 +50,8 @@
     <EditText
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:id="@+id/person_cute"
-        android:layout_below="@+id/person_like"
+        android:id="@+id/car3"
+        android:layout_below="@+id/car2"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:paddingTop="15dp"
@@ -60,8 +60,8 @@
     <EditText
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:id="@+id/person_gross"
-        android:layout_below="@+id/person_cute"
+        android:id="@+id/car4"
+        android:layout_below="@+id/car3"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:hint="Pick something awful"
@@ -73,9 +73,11 @@
         android:layout_height="wrap_content"
         android:text="What will you drive?"
         android:id="@+id/button"
-        android:layout_below="@+id/person_gross"
+        android:layout_below="@+id/car4"
         android:layout_centerHorizontal="true"
         android:background="#ffffc8e6"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        android:onClick="submitCars"
+        android:nestedScrollingEnabled="false" />
 </RelativeLayout>

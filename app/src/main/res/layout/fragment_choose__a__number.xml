@@ -18,7 +18,7 @@
     <EditText
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:id="@+id/num_kids"
+        android:id="@+id/num_roll"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="48dp"
@@ -33,7 +33,8 @@
         android:text="Ready to roll the dice?"
         android:id="@+id/button"
         android:background="#ffffc8e6"
-        android:layout_below="@+id/num_kids"
+        android:layout_below="@+id/num_roll"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="5dp"
+        android:onClick="pickNum" />
 </RelativeLayout>

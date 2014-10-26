@@ -17,7 +17,8 @@
         android:layout_below="@+id/num_kids4"
         android:layout_alignLeft="@+id/imageView"
         android:layout_alignStart="@+id/imageView"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:onClick="numKids" />
 
     <ImageView
         android:layout_width="wrap_content"

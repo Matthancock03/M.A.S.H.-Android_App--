@@ -53,7 +53,7 @@ public class Mash_Game extends Activity implements Pick_Husbands.OnFragmentInter
     }
 
     public void submitHusbands(View view){
-        EditText nameEdit1 = (EditText)findViewById(R.id.car1);
+        EditText nameEdit1 = (EditText)findViewById(R.id.person_love);
         EditText nameEdit2 = (EditText)findViewById(R.id.person_like);
         EditText nameEdit3 = (EditText)findViewById(R.id.person_cute);
         EditText nameEdit4 = (EditText)findViewById(R.id.person_gross);
@@ -63,8 +63,8 @@ public class Mash_Game extends Activity implements Pick_Husbands.OnFragmentInter
         husband3 = nameEdit3.getText().toString();
         husband4 = nameEdit4.getText().toString();
 
-        Choose_cars cars = new Choose_cars();
-        replaceFragment(cars);
+       Choose_cars cars = new Choose_cars();
+       replaceFragment(cars);
     }
 
     public void submitCars(View view){
@@ -83,7 +83,7 @@ public class Mash_Game extends Activity implements Pick_Husbands.OnFragmentInter
     }
 
     public void numKids(View view){
-        EditText nameEdit1 = (EditText)findViewById(R.id.num_kids1);
+        /*EditText nameEdit1 = (EditText)findViewById(R.id.num_kids1);
         EditText nameEdit2 = (EditText)findViewById(R.id.num_kids2);
         EditText nameEdit3 = (EditText)findViewById(R.id.num_kids3);
         EditText nameEdit4 = (EditText)findViewById(R.id.num_kids4);
@@ -92,14 +92,14 @@ public class Mash_Game extends Activity implements Pick_Husbands.OnFragmentInter
         kids2 = Integer.parseInt(nameEdit1.getText().toString());
         kids3 = Integer.parseInt(nameEdit1.getText().toString());
         kids4 = Integer.parseInt(nameEdit1.getText().toString());
-
+        */
         Choose_A_Number choose = new Choose_A_Number();
         replaceFragment(choose);
     }
     public void pickNum(View view){
-        EditText nameEdit1 = (EditText)findViewById(R.id.num_roll);
+        /*EditText nameEdit1 = (EditText)findViewById(R.id.num_roll);
         numpick = Integer.parseInt(nameEdit1.getText().toString());
-
+        */
         Results result = new Results();
         replaceFragment(result);
     }

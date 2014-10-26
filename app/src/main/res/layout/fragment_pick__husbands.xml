@@ -81,6 +81,6 @@
         android:background="#ffffc8e6"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:onClick="submitCars" />
+        android:onClick="submitHusbands" />
 
 </RelativeLayout>

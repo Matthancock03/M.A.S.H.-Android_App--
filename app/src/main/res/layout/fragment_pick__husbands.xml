@@ -26,7 +26,8 @@
         android:paddingTop="15dp"
         android:layout_below="@+id/textView"
         android:layout_alignLeft="@+id/person_like"
-        android:layout_alignStart="@+id/person_like" />
+        android:layout_alignStart="@+id/person_like"
+        android:inputType="textPersonName" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -48,7 +49,8 @@
         android:layout_centerHorizontal="true"
         android:hint="Pick another person you like"
         android:gravity="center"
-        android:paddingTop="15dp" />
+        android:paddingTop="15dp"
+        android:inputType="textPersonName" />
 
     <EditText
         android:layout_width="250dp"
@@ -58,7 +60,8 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:paddingTop="15dp"
-        android:hint="Pick someone cute" />
+        android:hint="Pick someone cute"
+        android:inputType="textPersonName" />
 
     <EditText
         android:layout_width="250dp"
@@ -68,7 +71,8 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:hint="Pick someone gross"
-        android:paddingTop="15dp" />
+        android:paddingTop="15dp"
+        android:inputType="textPersonName" />
 
     <Button
         style="?android:attr/buttonStyleSmall"

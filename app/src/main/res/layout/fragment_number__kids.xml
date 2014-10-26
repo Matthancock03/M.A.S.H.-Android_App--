@@ -37,7 +37,8 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:layout_marginTop="15dp"
-        android:hint="How many kids do you want?" />
+        android:hint="How many kids do you want?"
+        android:inputType="number" />
 
     <EditText
         android:layout_width="250dp"
@@ -47,7 +48,8 @@
         android:hint="Second choice?"
         android:layout_below="@+id/num_kids1"
         android:layout_alignLeft="@+id/num_kids1"
-        android:layout_alignStart="@+id/num_kids1" />
+        android:layout_alignStart="@+id/num_kids1"
+        android:inputType="number" />
 
     <EditText
         android:layout_width="250dp"
@@ -56,7 +58,8 @@
         android:gravity="center"
         android:hint="How many would be okay?"
         android:layout_below="@+id/num_kids2"
-        android:layout_alignLeft="@+id/num_kids2" />
+        android:layout_alignLeft="@+id/num_kids2"
+        android:inputType="number" />
 
     <EditText
         android:layout_width="250dp"
@@ -65,5 +68,6 @@
         android:layout_below="@+id/num_kids3"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:hint="How many is too many?" />
+        android:hint="How many is too many?"
+        android:inputType="number" />
 </RelativeLayout>

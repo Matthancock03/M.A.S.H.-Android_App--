@@ -23,7 +23,8 @@
         android:paddingTop="15dp"
         android:layout_below="@+id/textView"
         android:layout_alignLeft="@+id/car2"
-        android:layout_alignStart="@+id/car2" />
+        android:layout_alignStart="@+id/car2"
+        android:inputType="text" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -45,7 +46,8 @@
         android:layout_centerHorizontal="true"
         android:hint="Pick another dream car"
         android:gravity="center"
-        android:paddingTop="15dp" />
+        android:paddingTop="15dp"
+        android:inputType="text" />
 
     <EditText
         android:layout_width="250dp"
@@ -55,7 +57,8 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:paddingTop="15dp"
-        android:hint="Pick something economical" />
+        android:hint="Pick something economical"
+        android:inputType="text" />
 
     <EditText
         android:layout_width="250dp"
@@ -65,7 +68,8 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:hint="Pick something awful"
-        android:paddingTop="15dp" />
+        android:paddingTop="15dp"
+        android:inputType="text" />
 
     <Button
         style="?android:attr/buttonStyleSmall"

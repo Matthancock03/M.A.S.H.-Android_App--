@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import static java.lang.Thread.sleep;
 
@@ -42,13 +43,11 @@ public class Mash_Game extends Activity implements Pick_Husbands.OnFragmentInter
 
     public void getName(View view) throws InterruptedException {
         EditText nameEdit = (EditText)findViewById(R.id.user_name);
+        if(!isEmpty(nameEdit)){
         userName = nameEdit.getText().toString();
-        /*nameEdit.setText("Thanks " + userName);
-        nameEdit.setFocusable(false);
-
-        sleep(1500);*/
         Pick_Husbands spouse = new Pick_Husbands();
-        replaceFragment(spouse);
+        replaceFragment(spouse);}
+        else{Toast.makeText(this,"Please enter your name", Toast.LENGTH_SHORT).show();}
 
     }
 
@@ -57,7 +56,7 @@ public class Mash_Game extends Activity implements Pick_Husbands.OnFragmentInter
         EditText nameEdit2 = (EditText)findViewById(R.id.person_like);
         EditText nameEdit3 = (EditText)findViewById(R.id.person_cute);
         EditText nameEdit4 = (EditText)findViewById(R.id.person_gross);
-
+        if(!isEmpty(nameEdit1) && !isEmpty(nameEdit2) && !isEmpty(nameEdit3) && !isEmpty(nameEdit4)){
         husband1 = nameEdit1.getText().toString();
         husband2 = nameEdit2.getText().toString();
         husband3 = nameEdit3.getText().toString();
@@ -66,13 +65,16 @@ public class Mash_Game extends Activity implements Pick_Husbands.OnFragmentInter
        Choose_cars cars = new Choose_cars();
        replaceFragment(cars);
     }
+    else{
+        Toast.makeText(this, "Please fill out all boxes!",Toast.LENGTH_SHORT).show();}
+    }
 
     public void submitCars(View view){
         EditText nameEdit1 = (EditText)findViewById(R.id.car1);
         EditText nameEdit2 = (EditText)findViewById(R.id.car2);
         EditText nameEdit3 = (EditText)findViewById(R.id.car3);
         EditText nameEdit4 = (EditText)findViewById(R.id.car4);
-
+        if(!isEmpty(nameEdit1) && !isEmpty(nameEdit2) && !isEmpty(nameEdit3) && !isEmpty(nameEdit4)){
         car1 = nameEdit1.getText().toString();
         car2 = nameEdit2.getText().toString();
         car3 = nameEdit3.getText().toString();
@@ -80,28 +82,41 @@ public class Mash_Game extends Activity implements Pick_Husbands.OnFragmentInter
 
         Number_Kids kids = new Number_Kids();
         replaceFragment(kids);
+        }
+        else{
+            Toast.makeText(this, "Please fill out all boxes!",Toast.LENGTH_SHORT).show();}
     }
 
     public void numKids(View view){
-        /*EditText nameEdit1 = (EditText)findViewById(R.id.num_kids1);
+        EditText nameEdit1 = (EditText)findViewById(R.id.num_kids1);
         EditText nameEdit2 = (EditText)findViewById(R.id.num_kids2);
         EditText nameEdit3 = (EditText)findViewById(R.id.num_kids3);
         EditText nameEdit4 = (EditText)findViewById(R.id.num_kids4);
-
+        if(!isEmpty(nameEdit1) && !isEmpty(nameEdit2) && !isEmpty(nameEdit3) && !isEmpty(nameEdit4)){
         kids1 = Integer.parseInt(nameEdit1.getText().toString());
-        kids2 = Integer.parseInt(nameEdit1.getText().toString());
-        kids3 = Integer.parseInt(nameEdit1.getText().toString());
-        kids4 = Integer.parseInt(nameEdit1.getText().toString());
-        */
+        kids2 = Integer.parseInt(nameEdit2.getText().toString());
+        kids3 = Integer.parseInt(nameEdit3.getText().toString());
+        kids4 = Integer.parseInt(nameEdit4.getText().toString());
+
         Choose_A_Number choose = new Choose_A_Number();
         replaceFragment(choose);
+        }
+        else{
+            Toast.makeText(this, "Please fill out all boxes!",Toast.LENGTH_SHORT).show();}
+
+
     }
     public void pickNum(View view){
-        /*EditText nameEdit1 = (EditText)findViewById(R.id.num_roll);
-        numpick = Integer.parseInt(nameEdit1.getText().toString());
-        */
+
+            EditText nameEdit1 = (EditText) findViewById(R.id.num_roll);
+        if(!isEmpty(nameEdit1)){
+            numpick = Integer.parseInt(nameEdit1.getText().toString());
+
         Results result = new Results();
         replaceFragment(result);
+        }
+        else{
+            Toast.makeText(this, "Please fill out all boxes!",Toast.LENGTH_SHORT).show();}
     }
 
     private void replaceFragment(Fragment frag){
@@ -110,6 +125,11 @@ public class Mash_Game extends Activity implements Pick_Husbands.OnFragmentInter
         fragmentManager.beginTransaction().replace(R.id.container, frag).addToBackStack(null).commit();
 
     }
+
+    private boolean isEmpty(EditText etText) {
+        return etText.getText().toString().trim().length() == 0;
+    }
+
 
     @Override
     public void onFragmentInteraction(Uri uri) {

@@ -10,5 +10,6 @@
     <string name="husband_header"><u>Future Husband Or Wife</u></string>
     <string name="car_header">Future Car</string>
     <string name="results_header">Moment of truth! \nLets see what your future holds.</string>
-
+    <string name="results">%1$s, you will marry %1$s,\r\n you will live in a %2$s, \r\n
+         you will have %3$d kids, \r\n and drive a %4$s!</string>
 </resources>

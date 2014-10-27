@@ -9,34 +9,49 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageButton"
         android:src="@drawable/mash_puppylove"
+        android:clickable="false"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:clickable="false" />
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginBottom="15dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/results_header"
         android:id="@+id/textView"
-        android:layout_below="@+id/imageButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="53dp"
         android:textStyle="bold"
         android:textSize="20sp"
         android:gravity="center"
-        android:textColor="#ff000000" />
+        android:textColor="#ff000000"
+        android:paddingBottom="15dp"
+        android:layout_below="@+id/imageButton"
+        android:layout_centerHorizontal="true" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/user_name"
+        android:id="@+id/results"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
         android:gravity="center"
         android:paddingTop="20dp"
-         />
+        android:textStyle="bold|italic"
+        android:textSize="20sp"
+        android:layout_above="@+id/resultButton"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="175dp"
+        android:layout_height="35dp"
+        android:text="Click here to see your future!"
+        android:id="@+id/resultButton"
+        android:background="#ffffc8e6"
+        android:onClick="gameLogic"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

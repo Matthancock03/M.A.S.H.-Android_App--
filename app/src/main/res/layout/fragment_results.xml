@@ -7,7 +7,7 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton"
+        android:id="@+id/resultImage"
         android:src="@drawable/mash_puppylove"
         android:clickable="false"
         android:layout_alignParentTop="true"
@@ -27,9 +27,8 @@
         android:gravity="center"
         android:textColor="#ff000000"
         android:paddingBottom="15dp"
-        android:layout_below="@+id/imageButton"
+        android:layout_below="@+id/resultImage"
         android:layout_centerHorizontal="true" />
-
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

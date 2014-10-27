@@ -5,4 +5,8 @@
     android:background="@drawable/mash_crinkle_paper"
     android:id="@+id/container">
 
+
+
+
+
 </RelativeLayout>

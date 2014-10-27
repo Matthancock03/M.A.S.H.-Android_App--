@@ -31,6 +31,7 @@ public class Mash_Game extends Activity implements Pick_Husbands.OnFragmentInter
     private int kids1;
     private int numpick;
     private int numWinners = 0;
+    String winnerMessage = null;
 
     ArrayList<mashNode> board = new ArrayList<mashNode>();
 
@@ -44,6 +45,15 @@ public class Mash_Game extends Activity implements Pick_Husbands.OnFragmentInter
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
+    }
+    @Override
+    public void onBackPressed(){
+
+        if(winnerMessage != null){
+            System.exit(0);
+        }
+        super.onBackPressed();
+
     }
 
     @Override
@@ -173,13 +183,15 @@ public class Mash_Game extends Activity implements Pick_Husbands.OnFragmentInter
             }
         }
 
-        String winnerMessage = (userName + " you will marry " + husbands + ". \n You will live in a "
+        winnerMessage = (userName + " you will marry " + husbands + ". \n You will live in a "
         + houses + ".\n You will have " + kids1 + " kids,\n and drive a " + car1 + "!");
 
         TextView result = (TextView)findViewById(R.id.results);
         result.setText(winnerMessage);
 
     }
+
+
 
     private void selectWinner(String string){
         for (mashNode s : board) {

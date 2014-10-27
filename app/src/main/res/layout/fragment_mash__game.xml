@@ -17,7 +17,9 @@
         android:src="@drawable/mash_puppylove"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:clickable="false" />
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,7 +32,9 @@
         android:textStyle="bold|italic"
         android:textSize="20sp"
         android:gravity="center"
-        android:textColor="#ff000000" />
+        android:textColor="#ff000000"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
 
     <EditText
         android:layout_width="wrap_content"

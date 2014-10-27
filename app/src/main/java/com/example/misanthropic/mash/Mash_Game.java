@@ -7,6 +7,7 @@ import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -160,7 +161,13 @@ public class Mash_Game extends Activity implements Pick_Husbands.OnFragmentInter
 
     public void gameLogic(View view){
         Button resultbtn = (Button)findViewById(R.id.resultButton);
-        resultbtn.setVisibility(View.INVISIBLE);
+        resultbtn.setText("Share Your Results");
+
+        resultbtn.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                    share();
+            }
+        });
 
         boolean gameComplete = false;
         int x = numpick, housesFalse = 0, husbandsFalse = 0, carsFalse = 0, kidsFalse = 0;
@@ -230,6 +237,31 @@ public class Mash_Game extends Activity implements Pick_Husbands.OnFragmentInter
             value = values;
 
         }
+    }
+
+    public void share(){
+        Toast.makeText(this,"Not ready yet! Try back soon.", Toast.LENGTH_LONG).show();
+    }
+
+    protected void sendSMSMessage() {
+
+        /*EditText txtPhoneNo = (EditText) findViewById(R.id.txtPhoneNo);
+        EditText  txtMessage = (EditText) findViewById(R.id.txtMessage);
+
+        String phoneNo = txtPhoneNo.getText().toString();
+        String message = txtMessage.getText().toString();
+
+        try {
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage(phoneNo, null, message, null, null);
+            Toast.makeText(getApplicationContext(), "SMS sent.",
+                    Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(),
+                    "SMS faild, please try again.",
+                    Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        }*/
     }
 
     @Override
